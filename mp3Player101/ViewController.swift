@@ -93,17 +93,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         {
         audio.play()
             btn_Play.setImage(UIImage(named: "pause.png"), for: UIControlState())
+            Playing = true
         }
         else{
             audio.pause()
             btn_Play.setImage(UIImage(named: "play.png"), for: UIControlState())
+            Playing = false
         }
-    Playing = !Playing
+        Playing = !Playing
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if (repeat101 == false)
         {
             btn_Play.setImage(UIImage(named: "play.png"), for: UIControlState())
+            Playing = true
         }
         }
     
